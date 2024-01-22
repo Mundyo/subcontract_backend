@@ -9,24 +9,24 @@ const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-const allowedOrigins = ['http://localhost:3000', ];
+// const allowedOrigins = ['http://localhost:3000', ];
 
-app.use(cors({
-  origin: function (origin, callback) {
-    if (!origin || allowedOrigins.indexOf(origin) !== -1) {
-      return callback(null, true);
-    }
+// app.use(cors({
+//   origin: function (origin, callback) {
+//     if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+//       return callback(null, true);
+//     }
 
-    const msg = 'The CORS policy for this site does not allow access from the specified origin.';
-    return callback(new Error(msg), false);
-  },
-  credentials: true,
-}));
+//     const msg = 'The CORS policy for this site does not allow access from the specified origin.';
+//     return callback(new Error(msg), false);
+//   },
+//   credentials: true,
+// }));
 
-//  app.use(cors({
-//     origin: true,
-//     credentials: true,
-//   }));
+ app.use(cors({
+    origin: true,
+    credentials: true,
+  }));
 
 const DB = 'mongodb+srv://Chelsea:Kasongi2014!@cluster0.ali2jhg.mongodb.net/';
 
