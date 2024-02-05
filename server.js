@@ -59,7 +59,7 @@ app.post('/submit-form', async (req, res) => {
     const mailOptions ={
 
       from: 'subcontractracker@gmail.com',
-      to:   'cowalters@gmail.com',
+      to:   'cowalters20@gmail.com',
       subject: 'New Form Submission',
       text: JSON.stringify(formData)
     }
@@ -69,6 +69,7 @@ app.post('/submit-form', async (req, res) => {
     }catch(emailError){
       console.error('error sending the form', emailError)
       res.status(500).json({error:'Error sending email'});
+      
     }
    
 
